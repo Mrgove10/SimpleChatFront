@@ -1,28 +1,38 @@
 <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">SimpleChat Dashboard </div>
-        <div class="list-group list-group-flush">
-            <a routerLink="/users" class="list-group-item list-group-item-action bg-light">Users</a>
-            <a routerLink="/quests" class="list-group-item list-group-item-action bg-light">Chatrooms</a>
-        </div>
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">SimpleChat Dashboard </div>
+    <div class="list-group list-group-flush">
+      <a routerLink="/users" class="list-group-item list-group-item-action bg-light">Users</a>
+      <a routerLink="/quests" class="list-group-item list-group-item-action bg-light">Chatrooms</a>
     </div>
+  </div>
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+    </nav>
 
-        <div class="container-fluid">
+    <div class="container-fluid">
 
-            <app-list type="Users">
-            </app-list>
-            <app-list type="Charooms">
-            </app-list>
-
+      <div class="container">
+        <div class="row">
+          <app-resume-infos class="col-4" id="container" [title]="'Active Users'" [number]="'1'"></app-resume-infos>
+          <app-resume-infos class="col-4" id="container" [title]="'Chatrooms'" [number]="'2'"></app-resume-infos>
         </div>
+      </div>
+      
+      <app-list type="Users">
+      </app-list>
+      <app-list type="Charooms">
+      </app-list>
+
+      <app-list></app-list>
+      <app-list></app-list>
+
     </div>
+  </div>
 </div>

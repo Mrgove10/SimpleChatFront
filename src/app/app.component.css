@@ -41,4 +41,9 @@
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+
+  #container {
+    background-color: #f2f2f2;
+    margin-right: 20px;
+  }
 }
