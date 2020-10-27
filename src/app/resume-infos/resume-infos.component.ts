@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IServerInfosList } from '../interfaces/IServerInfosList'
 
 @Component({
   selector: 'app-resume-infos',
@@ -7,10 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ResumeInfosComponent implements OnInit {
 
-  @Input() title: string; 
-  @Input() number: number; 
+  @Input() item: IServerInfosList;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

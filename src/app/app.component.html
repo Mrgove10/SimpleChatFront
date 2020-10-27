@@ -20,11 +20,11 @@
 
       <div class="container">
         <div class="row">
-          <app-resume-infos class="col-4" id="container" [title]="'Active Users'" [number]="'1'"></app-resume-infos>
-          <app-resume-infos class="col-4" id="container" [title]="'Chatrooms'" [number]="'2'"></app-resume-infos>
+          <app-resume-infos class="col-4" id="container" [item]="serverInfosList[0]"></app-resume-infos>
+          <app-resume-infos class="col-4" id="container" [item]="serverInfosList[1]"></app-resume-infos>
         </div>
       </div>
-      
+
       <app-list type="Users">
       </app-list>
       <app-list type="Chatrooms">
