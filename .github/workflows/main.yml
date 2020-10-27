@@ -1,0 +1,44 @@
+name: Test & Build
+on:
+  push:
+    branches:
+      - master
+      - *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 13.x, 14.x]
+
+    steps:
+      - name: Clone repo 
+        uses: actions/checkout@v2
+
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Npm install
+        run: npm ci
+
+      - name: ng lint
+        run: npm run lint
+
+      # - name: cypress test
+      #   run: npm run test:cypress
+
+      - name: ng test
+        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+        continue-on-error: true
+
+      - name: ng build
+        run:  npm run build
+
+      - name: Artifact creation
+        uses: actions/upload-artifact@v1
+        with:
+          name: Build Artifact
+          path: dist/
