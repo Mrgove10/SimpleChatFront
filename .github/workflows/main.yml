@@ -40,5 +40,5 @@ jobs:
       - name: Artifact creation
         uses: actions/upload-artifact@v1
         with:
-          name: Build Artifact
+          name: Build Artifact (Node ${{ matrix.node-version }})
           path: dist/
