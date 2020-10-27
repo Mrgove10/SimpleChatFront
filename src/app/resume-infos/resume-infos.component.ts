@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IServerInfosList } from '../interfaces/IServerInfosList'
+import { IServerInfosList } from '../interfaces/IServerInfosList';
 
 @Component({
   selector: 'app-resume-infos',
