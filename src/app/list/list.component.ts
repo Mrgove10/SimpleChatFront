@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserList } from '../classes/UserList';
 
 @Component({
   selector: 'app-list',
@@ -8,14 +9,23 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
   public List: Array<any> = [];
+  @Input() public type = '';
 
   constructor() { }
 
   ngOnInit() {
-    for (let i = 0; i < 5; i++) {
-      this.List.push({
-        coucou: i
-      });
+    switch (this.type) {
+      case 'Users':
+        for (let i = 0; i < 5; i++) {
+          this.List.push(
+            new UserList(`localhost:${i}`, `${i}`, `adrien${i}`, 'ACTIVE')
+          );
+        }
+        break;
+      case 'Chatrooms':
+        break;
+      default:
+        break;
     }
   }
 }

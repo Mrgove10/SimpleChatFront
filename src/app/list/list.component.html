@@ -1,9 +1,22 @@
-<p>list works!</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{type}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <table style="width:100%">
+      <tr>
+        <th>IP</th>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Status</th>
+      </tr>
 
-
-<ul>
-    <li *ngFor="let item of List">
-      {{item.coucou}}
-    </li>
-  </ul>
-  
+      <tr *ngFor="let item of List">
+        <td> {{item.ServerIP}}</td>
+        <td> {{item.UserID}}</td>
+        <td> {{item.Username}}</td>
+        <td> {{item.Status}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
