@@ -11,25 +11,22 @@
 
   <!-- Page Content -->
   <div id="page-content-wrapper">
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
       <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
     </nav>
-
+    <br>
     <div class="container-fluid">
-
-      <div class="container">
-        <div class="row">
-          <app-resume-infos class="col-4" id="container" [item]="serverInfosList[0]"></app-resume-infos>
-          <app-resume-infos class="col-4" id="container" [item]="serverInfosList[1]"></app-resume-infos>
-        </div>
+      <div class="row container-fluid">
+        <app-resume-infos id="container" [item]="serverInfosList[0]">
+        </app-resume-infos>
+        <app-resume-infos id="container" [item]="serverInfosList[1]">
+        </app-resume-infos>
       </div>
-
+      <br>
       <app-list type="Users">
       </app-list>
       <app-list type="Chatrooms">
       </app-list>
-
     </div>
   </div>
 </div>

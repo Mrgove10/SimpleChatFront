@@ -1,6 +1,10 @@
-<h5>{{item.name}}</h5>
-<p id="server-number">{{item.numberOfItem}}</p>
-<p>On servers :</p>
-<ul>
-    <li *ngFor="let server of item.serverList">{{server}}</li>
-</ul>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p id="server-number">{{item.numberOfItem}}</p>
+        <p>On servers :</p>
+        <ul>
+            <li *ngFor="let server of item.serverList">{{server}}</li>
+        </ul>
+    </div>
+</div>
