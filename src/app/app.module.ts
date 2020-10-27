@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
-import { ResumeInfosComponent } from './resume-infos/resume-infos.component';
+import { ResumeInfosComponent } from './resume-infos/resume-infos.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ResumeInfosComponent } from './resume-infos/resume-infos.component';
     ResumeInfosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [

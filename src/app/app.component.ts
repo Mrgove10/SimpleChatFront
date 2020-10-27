@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IServerInfosList } from './interfaces/IServerInfosList';
+import { Observable } from 'rxjs/internal/Observable';
+import { IServerInfosList } from './interfaces/IServerInfosList'
+import { IUser } from './interfaces/IUser';
+import { ApiService } from './services/api.service';
 
 declare var $: any;
 
@@ -11,27 +14,26 @@ declare var $: any;
 
 export class AppComponent implements OnInit {
   title = 'SimpleChatFront';
-  serverInfosList: Array<IServerInfosList> = new Array();
+  usersList: Array<IUser[]> = new Array()
 
-  constructor() {
-    this.serverInfosList.push({
-      name: 'Active users',
-      numberOfItem: 1,
-      serverList: ['http://localhost:2222', 'http://localhost:2223']
-    });
-
-    this.serverInfosList.push({
-      name: 'Chatrooms',
-      numberOfItem: 2,
-      serverList: ['http://localhost:2222', 'http://localhost:2223']
-    });
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
+
+    this.getUsers()
+    console.log(this.usersList)
+
     // RIP, using Jquery in angular
     $('#menu-toggle').click((e) => {
       e.preventDefault();
       $('#wrapper').toggleClass('toggled');
     });
+  }
+
+  getUsers(): void {
+    this.apiService.getUsers().forEach((value) => {
+      value.subscribe(users => this.usersList.push(users))
+    })
   }
 }
