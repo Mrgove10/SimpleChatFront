@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ChatroomList } from '../classes/ChatoomList';
 import { UserList } from '../classes/UserList';
 
 @Component({
@@ -23,6 +24,11 @@ export class ListComponent implements OnInit {
         }
         break;
       case 'Chatrooms':
+        for (let i = 0; i < 3; i++) {
+          this.List.push(
+            new ChatroomList(`localhost:${i}`, `chat${i}`)
+          );
+        }
         break;
       default:
         break;
