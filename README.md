@@ -1,5 +1,7 @@
 # SimpleChatFront
 
+![Test & Build](https://github.com/Mrgove10/SimpleChatFront/workflows/Test%20&%20Build/badge.svg)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
 ## Development server

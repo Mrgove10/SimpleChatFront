@@ -1,3 +1,26 @@
-<h1>Hello World !</h1>
+<div class="d-flex" id="wrapper">
 
-<app-list></app-list>
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">SimpleChat Dashboard </div>
+        <div class="list-group list-group-flush">
+            <a routerLink="/users" class="list-group-item list-group-item-action bg-light">Users</a>
+            <a routerLink="/quests" class="list-group-item list-group-item-action bg-light">Chatrooms</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+        </nav>
+
+        <div class="container-fluid">
+
+            <app-list></app-list>
+            <app-list></app-list>
+
+        </div>
+    </div>
+</div>
