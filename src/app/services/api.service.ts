@@ -19,8 +19,7 @@ const optionRequete = {
 export class ApiService {
 
   private serverUrl1 = 'http://127.0.0.1:2345';
-  private serverUrl2 = 'http://127.0.0.1:3456';
-  private serverUrl3 = 'htpp://127.0.0.1:4567';
+  private serverUrl3 = 'http://127.0.0.1:4567';
 
   constructor(private http: HttpClient) {
 
@@ -29,7 +28,7 @@ export class ApiService {
   getUsers(): Array<Observable<IUser[]>> {
     let data = []
     data.push(this.http.get<IUser[]>(`${this.serverUrl1}/users`))
-    data.push(this.http.get<IUser[]>(`${this.serverUrl2}/users`))
+    //data.push(this.http.get<IUser[]>(`${this.serverUrl2}/users`))
     data.push(this.http.get<IUser[]>(`${this.serverUrl3}/users`))
 
     return data
@@ -38,7 +37,7 @@ export class ApiService {
   getChatrooms(): Array<Observable<string[]>> {
     let data = []
     data.push(this.http.get<string[]>(`${this.serverUrl1}/chatrooms`))
-    data.push(this.http.get<string[]>(`${this.serverUrl2}/chatrooms`))
+    //data.push(this.http.get<string[]>(`${this.serverUrl2}/chatrooms`))
     data.push(this.http.get<string[]>(`${this.serverUrl3}/chatrooms`))
 
     return data

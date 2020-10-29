@@ -23,9 +23,9 @@
         </app-resume-infos>
       </div>
       <br>
-      <app-list type="Users">
+      <app-list [items]="usersList" [title]="'Users'">
       </app-list>
-      <app-list type="Chatrooms">
+      <app-list [items]="chatroomsList" [title]="'Chatrooms'">
       </app-list>
     </div>
   </div>

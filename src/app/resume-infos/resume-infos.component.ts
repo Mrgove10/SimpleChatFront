@@ -1,4 +1,5 @@
 import { Component, Input, IterableDiffers, OnInit } from '@angular/core';
+import { IChatrooms } from '../interfaces/IChatrooms';
 import { IUser } from '../interfaces/IUser';
 
 @Component({
@@ -12,7 +13,7 @@ export class ResumeInfosComponent implements OnInit {
   private iterableDiffer: any;
 
   @Input() name: string;
-  @Input() item: any;
+  @Input() item: IChatrooms | IUser;
 
   constructor(private iterableDiffers: IterableDiffers) {
     this.iterableDiffer = iterableDiffers.find([]).create(null);
@@ -26,7 +27,6 @@ export class ResumeInfosComponent implements OnInit {
   }
 
   ngOnInit() {
-    //console.log(this.item.filter((v, i, a) => a.indexOf(v.server) === i))
   }
 
   getUniqueServersList(items: any[]) {
