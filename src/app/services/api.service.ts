@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { IUser } from '../interfaces/IUser'
+import { IUser } from '../interfaces/IUser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
-import { from } from 'rxjs';
-import { IChatrooms } from '../interfaces/IChatrooms';
 
 const optionRequete = {
-  headers: new HttpHeaders({ 
-    'Access-Control-Allow-Origin':'*',
+  headers: new HttpHeaders({
+    'Access-Control-Allow-Origin': '*',
     'Content-Type': 'text/html;charset=utf-8'
   })
 };
@@ -26,20 +24,20 @@ export class ApiService {
   }
 
   getUsers(): Array<Observable<IUser[]>> {
-    let data = []
-    data.push(this.http.get<IUser[]>(`${this.serverUrl1}/users`))
-    //data.push(this.http.get<IUser[]>(`${this.serverUrl2}/users`))
-    data.push(this.http.get<IUser[]>(`${this.serverUrl3}/users`))
+    const data = [];
+    data.push(this.http.get<IUser[]>(`${this.serverUrl1}/users`));
+    // data.push(this.http.get<IUser[]>(`${this.serverUrl2}/users`))
+    data.push(this.http.get<IUser[]>(`${this.serverUrl3}/users`));
 
-    return data
+    return data;
   }
 
   getChatrooms(): Array<Observable<string[]>> {
-    let data = []
-    data.push(this.http.get<string[]>(`${this.serverUrl1}/chatrooms`))
-    //data.push(this.http.get<string[]>(`${this.serverUrl2}/chatrooms`))
-    data.push(this.http.get<string[]>(`${this.serverUrl3}/chatrooms`))
+    const data = [];
+    data.push(this.http.get<string[]>(`${this.serverUrl1}/chatrooms`));
+    // data.push(this.http.get<string[]>(`${this.serverUrl2}/chatrooms`))
+    data.push(this.http.get<string[]>(`${this.serverUrl3}/chatrooms`));
 
-    return data
+    return data;
   }
 }
