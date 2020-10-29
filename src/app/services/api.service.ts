@@ -3,6 +3,7 @@ import { IUser } from '../interfaces/IUser'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { from } from 'rxjs';
+import { IChatrooms } from '../interfaces/IChatrooms';
 
 const optionRequete = {
   headers: new HttpHeaders({ 
@@ -30,6 +31,15 @@ export class ApiService {
     data.push(this.http.get<IUser[]>(`${this.serverUrl1}/users`))
     data.push(this.http.get<IUser[]>(`${this.serverUrl2}/users`))
     data.push(this.http.get<IUser[]>(`${this.serverUrl3}/users`))
+
+    return data
+  }
+
+  getChatrooms(): Array<Observable<string[]>> {
+    let data = []
+    data.push(this.http.get<string[]>(`${this.serverUrl1}/chatrooms`))
+    data.push(this.http.get<string[]>(`${this.serverUrl2}/chatrooms`))
+    data.push(this.http.get<string[]>(`${this.serverUrl3}/chatrooms`))
 
     return data
   }

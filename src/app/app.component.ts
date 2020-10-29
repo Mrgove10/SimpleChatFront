@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { IChatrooms } from './interfaces/IChatrooms';
 import { IServerInfosList } from './interfaces/IServerInfosList'
 import { IUser } from './interfaces/IUser';
 import { ApiService } from './services/api.service';
@@ -13,8 +14,15 @@ declare var $: any;
 })
 
 export class AppComponent implements OnInit {
+
   title = 'SimpleChatFront';
-  usersList: Array<IUser[]> = new Array()
+  usersList: IUser[] = new Array()
+  chatroomsList: IChatrooms[] = new Array()
+  private serversList: string[] = [
+    'http://127.0.0.1:2345',
+    'http://127.0.0.1:3456',
+    'htpp://127.0.0.1:4567'
+  ]
 
   constructor(private apiService: ApiService) {
   }
@@ -22,6 +30,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
     this.getUsers()
+    this.getChatrooms()
     console.log(this.usersList)
 
     // RIP, using Jquery in angular
@@ -32,8 +41,29 @@ export class AppComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.apiService.getUsers().forEach((value) => {
-      value.subscribe(users => this.usersList.push(users))
+    this.apiService.getUsers().forEach((value, index) => {
+      value.subscribe(users => {
+        console.log(users)
+        users.forEach(value => {
+          value.server = this.serversList[index]
+          this.usersList.push(value)
+        })
+      })
+    })
+  }
+
+  getChatrooms(): void {
+    this.apiService.getChatrooms().forEach((value, index) => {
+      value.subscribe(chatrooms => {
+        console.log(chatrooms)
+        chatrooms.forEach(value => {
+          let chatroom: IChatrooms = {
+            name: value,
+            server: this.serversList[index]
+          }
+          this.chatroomsList.push(chatroom)
+        })
+      })
     })
   }
 }
