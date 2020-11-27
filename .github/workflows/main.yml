@@ -28,7 +28,7 @@ jobs:
         run: npm run lint
 
       - name: cypress test
-        run: npm run e2e
+        run: npm run e2e:ci
 
       - name: ng test
         run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
