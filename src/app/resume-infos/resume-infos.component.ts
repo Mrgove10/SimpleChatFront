@@ -8,7 +8,7 @@ import { IUser } from '../interfaces/IUser';
   styleUrls: ['./resume-infos.component.css'],
 })
 export class ResumeInfosComponent implements OnInit, DoCheck {
-  private uniqueServersList: string[] = new Array();
+  public uniqueServersList: string[] = new Array();
   private iterableDiffer: any;
 
   @Input() name: string;
