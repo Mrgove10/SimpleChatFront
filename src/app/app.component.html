@@ -1,8 +1,7 @@
 <div class="d-flex" id="wrapper">
-
   <!-- Sidebar -->
   <div class="bg-light border-right" id="sidebar-wrapper">
-    <div id="title" class="sidebar-heading">SimpleChat Dashboard </div>
+    <div id="title" class="sidebar-heading">SimpleChat Dashboard</div>
     <div class="list-group list-group-flush">
       <a routerLink="/users" class="list-group-item list-group-item-action bg-light">Users</a>
       <a routerLink="/quests" class="list-group-item list-group-item-action bg-light">Chatrooms</a>
@@ -14,19 +13,15 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
       <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
     </nav>
-    <br>
+    <br />
     <div class="container-fluid">
       <div class="row container-fluid">
-        <app-resume-infos id="container" [item]="usersList" [name]="'Active users'">
-        </app-resume-infos>
-        <app-resume-infos id="container" [item]="chatroomsList" [name]="'Chatrooms'">
-        </app-resume-infos>
+        <app-resume-infos id="container" [item]="usersList" [name]="'Active users'"> </app-resume-infos>
+        <app-resume-infos id="container" [item]="chatroomsList" [name]="'Chatrooms'"> </app-resume-infos>
       </div>
-      <br>
-      <app-list [items]="usersList" [title]="'Users'">
-      </app-list>
-      <app-list [items]="chatroomsList" [title]="'Chatrooms'">
-      </app-list>
+      <br />
+      <app-list [items]="usersList" [title]="'Users'"> </app-list>
+      <app-list [items]="chatroomsList" [title]="'Chatrooms'"> </app-list>
     </div>
   </div>
 </div>

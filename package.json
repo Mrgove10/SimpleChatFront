@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
+    "pretify": "prettier --write .",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",

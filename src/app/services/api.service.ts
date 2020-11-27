@@ -6,22 +6,18 @@ import { Observable } from 'rxjs/internal/Observable';
 const optionRequete = {
   headers: new HttpHeaders({
     'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'text/html;charset=utf-8'
-  })
+    'Content-Type': 'text/html;charset=utf-8',
+  }),
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class ApiService {
-
   private serverUrl1 = 'http://127.0.0.1:2345';
   private serverUrl3 = 'http://127.0.0.1:4567';
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
 
   getUsers(): Array<Observable<IUser[]>> {
     const data = [];

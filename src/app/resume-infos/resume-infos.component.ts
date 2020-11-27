@@ -5,10 +5,9 @@ import { IUser } from '../interfaces/IUser';
 @Component({
   selector: 'app-resume-infos',
   templateUrl: './resume-infos.component.html',
-  styleUrls: ['./resume-infos.component.css']
+  styleUrls: ['./resume-infos.component.css'],
 })
 export class ResumeInfosComponent implements OnInit, DoCheck {
-
   private uniqueServersList: string[] = new Array();
   private iterableDiffer: any;
 
@@ -26,11 +25,9 @@ export class ResumeInfosComponent implements OnInit, DoCheck {
     }
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getUniqueServersList(items: any[]) {
-    this.uniqueServersList = [...new Set(items.map(item => item.server))];
+    this.uniqueServersList = [...new Set(items.map((item) => item.server))];
   }
-
 }

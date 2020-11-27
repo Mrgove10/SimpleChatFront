@@ -7,12 +7,8 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        ResumeInfosComponent,
-        ListComponent
-      ],
-      imports: [ HttpClientTestingModule ]
+      declarations: [AppComponent, ResumeInfosComponent, ListComponent],
+      imports: [HttpClientTestingModule],
     }).compileComponents();
   }));
 

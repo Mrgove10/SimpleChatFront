@@ -1,4 +1,4 @@
 export interface IChatrooms {
-    name: string;
-    server: string;
+  name: string;
+  server: string;
 }

@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <table style="width:100%" *ngIf="title === 'Users'">
+    <h5 class="card-title">{{ title }}</h5>
+    <table style="width: 100%" *ngIf="title === 'Users'">
       <tr>
         <th>IP</th>
         <th>ID</th>
@@ -10,22 +10,22 @@
       </tr>
 
       <tr *ngFor="let item of items">
-        <td> {{item.server}}</td>
-        <td> {{item.account.id}}</td>
-        <td> {{item.account.username}}</td>
-        <td> {{item.currentStatus}}</td>
+        <td>{{ item.server }}</td>
+        <td>{{ item.account.id }}</td>
+        <td>{{ item.account.username }}</td>
+        <td>{{ item.currentStatus }}</td>
       </tr>
     </table>
 
-    <table style="width:100%" *ngIf="title === 'Chatrooms'">
+    <table style="width: 100%" *ngIf="title === 'Chatrooms'">
       <tr>
         <th>Server</th>
         <th>Chatroom</th>
       </tr>
 
       <tr *ngFor="let item of items">
-        <td> {{item.server}}</td>
-        <td> {{item.name}}</td>
+        <td>{{ item.server }}</td>
+        <td>{{ item.name }}</td>
       </tr>
     </table>
   </div>

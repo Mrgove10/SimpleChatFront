@@ -4,9 +4,11 @@ import { ApiService } from './api.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('ApiService', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [ HttpClientTestingModule ]
-  }));
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+    })
+  );
 
   it('should be created', () => {
     const service: ApiService = TestBed.get(ApiService);

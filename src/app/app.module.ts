@@ -7,18 +7,9 @@ import { ResumeInfosComponent } from './resume-infos/resume-infos.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ListComponent,
-    ResumeInfosComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
+  declarations: [AppComponent, ListComponent, ResumeInfosComponent],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

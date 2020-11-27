@@ -10,25 +10,17 @@ declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-
 export class AppComponent implements OnInit {
-
   title = 'SimpleChatFront';
   usersList: IUser[] = new Array();
   chatroomsList: IChatrooms[] = new Array();
-  private serversList: string[] = [
-    'http://127.0.0.1:2345',
-    'http://127.0.0.1:3456',
-    'htpp://127.0.0.1:4567'
-  ];
+  private serversList: string[] = ['http://127.0.0.1:2345', 'http://127.0.0.1:3456', 'htpp://127.0.0.1:4567'];
 
-  constructor(private apiService: ApiService) {
-  }
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-
     this.getUsers();
     this.getChatrooms();
     console.log(this.usersList);
@@ -42,9 +34,9 @@ export class AppComponent implements OnInit {
 
   getUsers(): void {
     this.apiService.getUsers().forEach((value, index) => {
-      value.subscribe(users => {
+      value.subscribe((users) => {
         console.log(users);
-        users.forEach(user => {
+        users.forEach((user) => {
           user.server = this.serversList[index];
           this.usersList.push(user);
         });
@@ -54,12 +46,12 @@ export class AppComponent implements OnInit {
 
   getChatrooms(): void {
     this.apiService.getChatrooms().forEach((value, index) => {
-      value.subscribe(chatrooms => {
+      value.subscribe((chatrooms) => {
         console.log(chatrooms);
-        chatrooms.forEach(CR => {
+        chatrooms.forEach((CR) => {
           const chatroom: IChatrooms = {
             name: CR,
-            server: this.serversList[index]
+            server: this.serversList[index],
           };
           this.chatroomsList.push(chatroom);
         });
