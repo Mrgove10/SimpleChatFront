@@ -42,3 +42,9 @@ jobs:
         with:
           name: Build Artifact (Node ${{ matrix.node-version }})
           path: dist/
+
+      - name: Artifact creation (Code coverage)
+        uses: actions/upload-artifact@v1
+        with:
+          name: Code Coverage (Node ${{ matrix.node-version }})
+          path: coverage/
