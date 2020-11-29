@@ -25,8 +25,8 @@ describe('ApiService', () => {
   });
 
   it('should be created', () => {
-    const service: ApiService = TestBed.get(ApiService);
-    expect(service).toBeTruthy();
+    const serviceApi: ApiService = TestBed.get(ApiService);
+    expect(serviceApi).toBeTruthy();
   });
 
   it('should return an Observable<IUser[]>', () => {
@@ -60,11 +60,11 @@ describe('ApiService', () => {
     });
 
     const req = httpMock.expectOne(`${serverUrl1}/users`);
-    expect(req.request.method).toBe("GET");
+    expect(req.request.method).toBe('GET');
     req.flush(dummyUsers);
 
     const req2 = httpMock.expectOne(`${serverUrl3}/users`);
-    expect(req2.request.method).toBe("GET");
+    expect(req2.request.method).toBe('GET');
     req2.flush(dummyUsers);
   });
 
@@ -79,15 +79,14 @@ describe('ApiService', () => {
 
     const dummyChatrooms2 = [
       'Chatroom3'
-    ]
+    ];
 
     service.getChatrooms().forEach((value, index) => {
       value.subscribe((chatrooms) => {
-        if(index == 0) {
+        if (index === 0) {
           expect(chatrooms.length).toBe(2);
           expect(chatrooms).toEqual(dummyChatrooms1);
-        }
-        else if (index == 1) {
+        } else if (index === 1) {
           expect(chatrooms.length).toBe(1);
           expect(chatrooms).toEqual(dummyChatrooms2);
         }
@@ -95,11 +94,11 @@ describe('ApiService', () => {
     });
 
     const req = httpMock.expectOne(`${serverUrl1}/chatrooms`);
-    expect(req.request.method).toBe("GET");
+    expect(req.request.method).toBe('GET');
     req.flush(dummyChatrooms1);
 
     const req2 = httpMock.expectOne(`${serverUrl3}/chatrooms`);
-    expect(req2.request.method).toBe("GET");
+    expect(req2.request.method).toBe('GET');
     req2.flush(dummyChatrooms2);
   });
 });
